@@ -22,10 +22,8 @@ from ..emails import send_async_email
 frontend = Blueprint('frontend', __name__)
 
 @frontend.route('/')
-@login_required
 def dashboard():
-
-    return render_template('.../build/index.html', _active_dash=True)
+    return render_template('build/index.html', _active_dash=True)
 
 @frontend.route('/API/dashboard')
 @login_required
@@ -39,9 +37,9 @@ def apiindex():
     # current_app.logger.debug('debug')
 
     if current_user.is_authenticated:
-        return redirect(url_for('frontend.dashboard'))
+         return render_template('build/index.html', _active_dash=True)
 
-    return render_template('.../build/index.html', _active_dash=True)
+    return render_template('build/index.html', _active_dash=True)
 
 
 @frontend.route('/API/contact-us', methods=['GET', 'POST'])
