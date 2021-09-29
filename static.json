@@ -1,0 +1,7 @@
+{
+  "proxies": {
+    "/API/": {
+      "origin": "https://matt-harris-portfolio.herokuapp.com/"
+    }
+  }
+}
