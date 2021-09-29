@@ -25,7 +25,7 @@ frontend = Blueprint('frontend', __name__)
 @login_required
 def dashboard():
 
-    return render_template('.../public/index.html', _active_dash=True)
+    return render_template('.../build/index.html', _active_dash=True)
 
 @frontend.route('/API/dashboard')
 @login_required
