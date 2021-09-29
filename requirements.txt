@@ -5,6 +5,7 @@ Flask-Mail
 Flask-Caching
 Flask-Login
 Flask-Admin
+Flask-cors
 email-validator
 itsdangerous
 pytest

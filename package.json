@@ -29,6 +29,7 @@
   },
   "proxy": "http://localhost/5000",
   "dependencies": {
-    "http-proxy-middleware": "^2.0.1"
+    "http-proxy-middleware": "^2.0.1",
+    "react-scripts": "^4.0.3"
   }
 }
