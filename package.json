@@ -8,7 +8,7 @@
   },
   "scripts": {
     "onandroid": "node node_modules/react-scripts/scripts/start.js",
-    "start": "react-scripts start"
+    "start": "node node_modules/react-scripts/scripts/start.js"
   },
   "author": "",
   "license": "ISC",
