@@ -41,7 +41,7 @@ def apiindex():
     if current_user.is_authenticated:
         return redirect(url_for('frontend.dashboard'))
 
-    return render_template('frontend/landing.html', _active_home=True)
+    return render_template('.../build/index.html', _active_dash=True)
 
 
 @frontend.route('/API/contact-us', methods=['GET', 'POST'])
