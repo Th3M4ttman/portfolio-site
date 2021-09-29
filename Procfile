@@ -1,2 +1,2 @@
 api: gunicorn  manage:application
-web: npm prod:start
+web: npm start
