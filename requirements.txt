@@ -9,3 +9,4 @@ Flask-cors
 email-validator
 itsdangerous
 pytest
+gunicorn
