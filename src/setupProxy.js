@@ -1,10 +1,10 @@
-const {createProxyMiddleware} = require('http-proxy-middleware');
+const createProxyMiddleware = require('http-proxy-middleware');
 
 module.exports = function(app) {
   app.use(
     '/API',
     createProxyMiddleware({
-      target: 'https://matt-harris-portfolio.herokuapp.com:5000/API/',
+      target: 'http://localhost:5000/',
       changeOrigin: true,
     })
   );

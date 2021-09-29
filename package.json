@@ -30,15 +30,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": {
-    "/API": {
-      "target": "http://localhost:5000",
-      "pathRewrite": {
-        "^/API": "/"
-      }
-    }
-  },
-
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "http-proxy-middleware": "^2.0.1",
     "react": "^17.0.2",
