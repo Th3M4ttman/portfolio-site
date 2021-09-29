@@ -1,2 +1,2 @@
-web: gunicorn  manage:application 0.0.0.0:$FLASK_PORT
-web: npm start $REACT_PORT
+web: gunicorn  manage:application 0.0.0.0:5000
+web: npm start
