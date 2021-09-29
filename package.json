@@ -6,9 +6,12 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {
+   "scripts": {
     "onandroid": "node node_modules/react-scripts/scripts/start.js",
-    "start": "node node_modules/react-scripts/scripts/start.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC",
