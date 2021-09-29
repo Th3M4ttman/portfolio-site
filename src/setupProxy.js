@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/API',
     createProxyMiddleware({
-      target: 'http://localhost:5000/',
+      target: 'http://matt-harris-portfolio.Herokuapp.com:5000/',
       changeOrigin: true,
     })
   );
