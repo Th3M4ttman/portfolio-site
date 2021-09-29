@@ -1,0 +1,21 @@
+{
+  "name": "site",
+  "homepage": "https://github.com/Th3M4ttman/Portfolio-2",
+  "authors": [
+    "Th3M4ttman <workmatthewjharris94@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "react": "^15.1.0"
+  }
+}

@@ -1,0 +1,22 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Dashboard' %}
+
+{% extends 'layouts/base.html' %}
+
+{% block body %}
+  <div class="container" align=center >
+    <div class="row mt-5" align=center>
+      <div class="col-6 offset-3" align=center>
+         <a href="http://127.0.0.1:3000/" align=center> Front End</a>
+        <div id="root"></div>
+      </div>
+    </div>
+  </div>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- Load our React component. -->
+  <script src="{{url_for('static', filename='react-scripts.js')}}" text="text/babel"></script>
+{% endblock %}

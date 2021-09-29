@@ -1,0 +1,37 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Flask-Starter is a boilerplate starter template designed to help you quickstart your Flask web application development. It has all the ready-to-use bare minimum essentials.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "onandroid": "node node_modules/react-scripts/scripts/start.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.12"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost/5000",
+  "dependencies": {
+    "http-proxy-middleware": "^2.0.1"
+  }
+}
