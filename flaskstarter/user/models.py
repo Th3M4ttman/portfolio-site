@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, types
+from sqlalchemy import Column, types, func
 from sqlalchemy.ext.mutable import Mutable
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -104,7 +104,7 @@ class Users(db.Model, UserMixin):
 
     @classmethod
     def authenticate(cls, login, password):
-        user = db.session.query(Users).filter_by(email = Users.email.ilike(login)).first()
+        user = cls.query.filter(func.lower(Users.email) == func.lower(login)).first()
 
         if user:
             authenticated = user.check_password(password)
