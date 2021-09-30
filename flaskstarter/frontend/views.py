@@ -22,26 +22,16 @@ from ..emails import send_async_email
 frontend = Blueprint('frontend', __name__)
 
 @frontend.route('/')
-def dashboard():
-    return render_template('build/index.html', _active_dash=True)
-
-@frontend.route('/API/dashboard')
-@login_required
 def index():
-    return render_template('dashboard/dashboard.html', _active_dash=True)
-
-
-@frontend.route('/API/')
-def apiindex():
     # current_app.logger.debug('debug')
 
     if current_user.is_authenticated:
          return render_template('dashboard/dashboard.html', _active_dash=True)
 
-    return render_template('frontend/landing.html', _active_dash=True)
+    return render_template('dashboard/dashboard.html', _active_dash=True)
 
 
-@frontend.route('/API/contact-us', methods=['GET', 'POST'])
+@frontend.route('/contact-us', methods=['GET', 'POST'])
 def contact_us():
     form = ContactUsForm()
 
@@ -58,7 +48,7 @@ def contact_us():
     return render_template('frontend/contact_us.html', form=form)
 
 
-@frontend.route('/API/login', methods=['GET', 'POST'])
+@frontend.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('frontend.index'))
@@ -86,7 +76,7 @@ def login():
     return render_template('frontend/login.html', form=form, _active_login=True)
 
 
-@frontend.route('/API/logout')
+@frontend.route('/logout')
 @login_required
 def logout():
     logout_user()
@@ -94,7 +84,7 @@ def logout():
     return redirect(url_for('frontend.index'))
 
 
-@frontend.route('/API/signup', methods=['GET', 'POST'])
+@frontend.route('/signup', methods=['GET', 'POST'])
 def signup():
     if current_user.is_authenticated:
         return redirect(url_for('frontend.dashboard'))
@@ -132,7 +122,7 @@ def confirm_user_mail(name, email):
     send_async_email(subject, html, email)
 
 
-@frontend.route('/API/confirm_account/<secretstring>', methods=['GET', 'POST'])
+@frontend.route('/confirm_account/<secretstring>', methods=['GET', 'POST'])
 def confirm_account(secretstring):
     s = URLSafeSerializer('serliaizer_code')
     uname, uemail = s.loads(secretstring)
@@ -144,7 +134,7 @@ def confirm_account(secretstring):
     return redirect(url_for('frontend.login'))
 
 
-@frontend.route('/API/change_password', methods=['GET', 'POST'])
+@frontend.route('/change_password', methods=['GET', 'POST'])
 def change_password():
 
     if current_user.is_authenticated:
@@ -170,7 +160,7 @@ def update_password(email, email_activation_key, password):
     db.session.commit()
 
 
-@frontend.route('/API/reset_password', methods=['GET', 'POST'])
+@frontend.route('/reset_password', methods=['GET', 'POST'])
 def reset_password():
     form = RecoverPasswordForm()
 
@@ -199,11 +189,11 @@ def reset_password():
     return render_template('frontend/reset_password.html', form=form)
 
 
-@frontend.route('/API/terms')
+@frontend.route('/terms')
 def terms():
     return "To be updated soon.."
 
 
-@frontend.route('/API/about-us')
+@frontend.route(' /about-us')
 def about_us():
     return "To be updated soon.."
