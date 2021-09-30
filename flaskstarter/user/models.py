@@ -104,7 +104,7 @@ class Users(db.Model, UserMixin):
 
     @classmethod
     def authenticate(cls, login, password):
-        user = db.session.query(Users).filter_by(Users.email.ilike(login)).first()
+        user = db.session.query(Users).filter_by(email = Users.email.ilike(login)).first()
 
         if user:
             authenticated = user.check_password(password)
