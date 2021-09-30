@@ -28,7 +28,6 @@ def dashboard():
 @frontend.route('/API/dashboard')
 @login_required
 def index():
-
     return render_template('dashboard/dashboard.html', _active_dash=True)
 
 
@@ -37,9 +36,9 @@ def apiindex():
     # current_app.logger.debug('debug')
 
     if current_user.is_authenticated:
-         return render_template('build/index.html', _active_dash=True)
+         return render_template('dashboard/dashboard.html', _active_dash=True)
 
-    return render_template('build/index.html', _active_dash=True)
+    return render_template('frontend/landing.html', _active_dash=True)
 
 
 @frontend.route('/API/contact-us', methods=['GET', 'POST'])
