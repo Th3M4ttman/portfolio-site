@@ -30,7 +30,11 @@ def index():
 
     return render_template('dashboard/dashboard.html', _active_dash=True)
 
-
+@frontend.route('/dashboard')
+def dashboard():
+    # current_app.logger.debug('debug')
+     return render_template('dashboard/dashboard.html', _active_dash=True)
+         
 @frontend.route('/contact-us', methods=['GET', 'POST'])
 def contact_us():
     form = ContactUsForm()
