@@ -194,6 +194,6 @@ def terms():
     return "To be updated soon.."
 
 
-@frontend.route(' /about-us')
+@frontend.route('/about-us')
 def about_us():
     return "To be updated soon.."
