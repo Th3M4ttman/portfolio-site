@@ -9,10 +9,10 @@ class BaseConfig(object):
     # Change these settings as per your needs
 
     PROJECT = "flaskstarter"
-    PROJECT_NAME = "flaskstarter.domain"
+    PROJECT_NAME = "https://matt-harris-portfolio.herokuapp.com"
     PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
-    BASE_URL = "https://yourdomain-flaskstarter.domain"
+    BASE_URL = "https://matt-harris-portfolio.herokuapp.com"
     ADMIN_EMAILS = ['admin@flaskstarter.domain']
 
     DEBUG = False
