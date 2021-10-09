@@ -32,14 +32,14 @@ ${bottles} bottles of beer on the wall.`;
     if (this.state.bottles>0) {
         this.setState({ text: this.state.text + "\n" + this.jsbottles(this.state.bottles), bottles: this.state.bottles - 1, bottling: this.state.bottling});
       }
-    };
+    }
   }
   render() {
     return (
     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
-             99 Bottles
+          99 Bottles
         </h1>
         <div>
         <br />
