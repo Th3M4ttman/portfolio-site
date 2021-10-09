@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './main.css';
-import Bottlescomp from './components/';
-import {Project} from './components/';
+import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Bottlescomp />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
