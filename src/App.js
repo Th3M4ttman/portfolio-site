@@ -5,9 +5,8 @@ import * as THREE from "three";
 import {
   GLTFLoader
 } from 'three/examples/jsm/loaders/GLTFLoader'
-import tex from "./defaultMat_baseColor.jpeg"
-import normal from "./defaultMat_normal.jpeg"
-import space from "./skybox.jpg"
+
+
 import helveticaRegular from 'three/examples/fonts/helvetiker_regular.typeface.json'
 import {
   FontLoader
@@ -72,7 +71,7 @@ class About extends React.Component {
         <br />
 
         <div className="about" display="block">
-        <img src="./aboutpic.jpg" width="60%" alt="Matt" />
+        <img src="/about/aboutpic.jpg" width="60%" alt="Matt" />
         <p>
  My name is Matt Harris and im a Programmer/Artist/Writer/Musician
           </p>
@@ -82,7 +81,7 @@ class About extends React.Component {
         <p>
  I live on the beautiful Isle of Wight
           </p>
-        <img src="./aboutiow.jpg" alt="Isle of Wight" width="100%" />
+        <img src="/about/aboutiow.jpg" alt="Isle of Wight" width="100%" />
         </div>
         <br />
         <div className="about">
@@ -105,7 +104,7 @@ class ThreeScene extends React.Component {
   }
   render() {
     if (this.state.loaded === false) {
-      this.loader = <img className="loader" src="./ReactLoad.gif" alt="Loading" />
+      this.loader = <img className="loader" src="/ReactLoad.gif" alt="Loading" />
     } else {
       this.loader = null
     }
@@ -161,8 +160,7 @@ class ThreeScene extends React.Component {
     //console.log(this.pointlight)
     //this.light.castShadow = true;
     //ADD Your 3D Models here
-    loader.load('./scene.gltf', (gltf) => {
-      console.log("this", this)
+    loader.load('./models/scene.gltf', (gltf) => {
       this.model = gltf.scene
       this.model.position.set(0, 3, -2.5);
       this.model.scale.set(0.5, 0.5, 0.5)
@@ -184,8 +182,8 @@ class ThreeScene extends React.Component {
         this.model.position.z)
       console.log(this.skulltext)
       //this.scene.add(this.skulltext)
-      const skullm = new THREE.TextureLoader().load(tex)
-      const skulln = new THREE.TextureLoader().load(normal)
+      const skullm = new THREE.TextureLoader().load("/textures/skullbase.jpg")
+      const skulln = new THREE.TextureLoader().load("/textures/skullnorm.jpg")
       this.model.traverse(function(object) {
         object.name = "skull"
 
@@ -197,7 +195,7 @@ class ThreeScene extends React.Component {
     });
 
 
-    loader.load("./Sun.glb",
+    loader.load("./models/Sun.glb",
       (gltf) => {
         this.sun = gltf.scene;
         this.scene.add(this.sun);
@@ -208,7 +206,7 @@ class ThreeScene extends React.Component {
           .1,
           .1)
       });
-    loader.load("./Earth.glb",
+    loader.load("./models/Earth.glb",
       (gltf) => {
         this.earth = gltf.scene;
         this.scene.add(this.earth);
@@ -226,7 +224,7 @@ class ThreeScene extends React.Component {
           loaded: true
         })
       });
-    loader.load("./Moon.glb",
+    loader.load("./models/Moon.glb",
       (gltf) => {
         this.moon = gltf.scene;
         this.scene.add(this.moon);
@@ -237,7 +235,7 @@ class ThreeScene extends React.Component {
           .1,
           .1)
       });
-    loader.load('./Chest.gltf',
+    loader.load('./models/Chest.gltf',
       (gltf) => {
         this.chest = gltf.scene
         this.chestAnims = gltf.animations
@@ -369,7 +367,7 @@ class ThreeScene extends React.Component {
       1,
       1);
     this.skymaterial = new THREE.MeshBasicMaterial( {
-      map: new THREE.TextureLoader().load(space)
+      map: new THREE.TextureLoader().load("textures/skybox.jpg")
     });
     this.skybox = new THREE.Mesh(this.geometry,
       this.skymaterial);
@@ -388,7 +386,7 @@ class ThreeScene extends React.Component {
     cancelAnimationFrame(this.frameId);
   }
   animate = () => {
-    
+
     if (this.lines) {
       this.lines.material = new THREE.LineBasicMaterial({
         color: this.state.starcolour
